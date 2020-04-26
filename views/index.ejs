@@ -12,8 +12,8 @@
     <h1> Url Shortner</h1>
     <form action ="/shortUrl" method="POST" class="my-4 form-inline" >
       <label for="fullUrl" class="sr-only">Full Url</label>
-      <input placeholder="Url..." type="url" name ="fullUrl" id="fullUrl" required class="form-control col mr-2">
-      <button class="btn btn-success" type="submit" >ShortIt</button>
+      <input placeholder="Url..." type="url" name ="fullUrl" id="fullUrl"  class="form-control col mr-2">
+      <input class="btn btn-success" type="submit" value="ShortIt" >
     </form> 
     
     <table class="table table-stripped table-responsive">
@@ -26,24 +26,21 @@
         </tr>
       </thead>
       <tbody>
-        <%
-         shortUrls.foreach(shortUrl => {  %>
+        <% shortUrls.forEach( shortUrl => { %>
 
           <tr>
             <td>
-              <a href="<%= 
-              shortUrl.full
-                %> "> <%= shortUrl.full  %> </a>
+              <a href="<%= shortUrl.full %>"><%= shortUrl.full %></a>
             </td>
             <td>
-              <a href="<%= 
-              shortUrl.short  %>"><%= 
-              shortUrl.short  %></a>
+              <a href="<%= shortUrl.short %>"><%= shortUrl.short %></a>
             </td>
-            <td><%= 
-              shortUrl.Clicks  %></td>
+            <td><%= shortUrl.Clicks %></td>
           </tr>
+
           <% }) %>
+        %>
+        
       </tbody>
     </table>
   </div>
